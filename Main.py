@@ -1,6 +1,8 @@
 import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
+#TODO: Implementar tkinter bootstrap para interface gráfica
+#TODO: conseguir derivadas de ordens maiores(ex: seno, cosseno, tangente)
 
 # Input do user
 symbol_variable = sp.Symbol('x')
@@ -45,8 +47,8 @@ y_second_vals = expression_convert_second(x_vals)
 # Plotagem
 plt.figure(figsize=(10,6))
 plt.plot(x_vals, y_vals, label=f"$f(x) = {sp.latex(input_conversion)}$", color='blue')
-plt.plot(x_vals, y_deriv_vals, label=f"$f'(x) = {sp.latex(input_deriv)}$", color='red', linestyle='--')
-plt.plot(x_vals, y_second_vals, label=f"$f''(x) = {sp.latex(input_second_deriv)}$", color='green', linestyle='-.')
+plt.plot(x_vals, y_deriv_vals, label=f"$f'(x) = {sp.latex(input_deriv)}$", color='red', linestyle='-')
+plt.plot(x_vals, y_second_vals, label=f"$f''(x) = {sp.latex(input_second_deriv)}$", color='green', linestyle='-')
 
 # Marca pontos críticos
 for p in search_mark_points:
